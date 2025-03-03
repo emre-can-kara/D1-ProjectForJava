@@ -6,14 +6,16 @@ public class Main {
     }
 
     public static boolean shouldWakeUp(boolean isBarking, int clock) {
-        if (clock < 20 && clock > 8 && isBarking) {
-            return true;
-        } else if (!isBarking) {
-            return false;
-        } else {
-            return false;
+        if (clock < 0 || clock > 23) {
+            return false; // Geçersiz saatler için false dön
         }
+        // Köpek gece 8 (20) ile sabah 8 (8) arasında havlıyorsa true dön
+        if (isBarking && (clock < 8 || clock > 20)) {
+            return true;
+        }
+        return false; // Diğer tüm durumlarda false dön
     }
+
 
     public static boolean hasTeen(int firstAge, int secondAge, int thirdAge) {
         if (firstAge >= 13 && firstAge <= 19) {
@@ -36,7 +38,7 @@ public class Main {
     }
 
     public static double area(double width, double height) {
-       if (width < 0 || height < 0) {
+       if (width < 0.0 || height < 0.0) {
            return -1;
        }
        return width*height;
