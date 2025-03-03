@@ -6,15 +6,13 @@ public class Main {
     }
 
     public static boolean shouldWakeUp(boolean isBarking, int clock) {
-      if (clock < 0 && clock > 23) {
-          return false;
-      } else if (clock < 20 && clock > 8 && isBarking) {
-          return true;
-      } else if (!isBarking) {
-          return false;
-      } else {
-          return false;
-      }
+        if (clock < 20 && clock > 8 && isBarking) {
+            return true;
+        } else if (!isBarking) {
+            return false;
+        } else {
+            return false;
+        }
     }
 
     public static boolean hasTeen(int firstAge, int secondAge, int thirdAge) {
@@ -22,7 +20,13 @@ public class Main {
     }
 
     public static boolean isCatPlaying(boolean isSummer, int temp) {
-     
+     if (temp > 25 && temp < 35 && !isSummer) {
+         return true;
+     } else if (isSummer) {
+         return true;
+     } else {
+         return false;
+     }
     }
 
     public static double area(double width, double height) {
