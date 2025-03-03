@@ -30,10 +30,16 @@ public class Main {
     }
 
     public static double area(double width, double height) {
-       
+       if (width < 0 || height < 0) {
+           return -1;
+       }
+       return width*height;
     }
 
     public static double area(double radius) {
-       
+       if (radius < 1) {
+           return -1;
+       }
+       return radius*radius*Math.PI;
     }
 }
