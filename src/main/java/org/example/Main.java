@@ -28,11 +28,9 @@ public class Main {
     }
 
     public static boolean isCatPlaying(boolean isSummer, int temp) {
-     if (temp > 25 && temp < 35 && !isSummer) {
+     if (temp >= 25 && temp <= 35 && !isSummer) {
          return true;
-     } else if (isSummer) {
-         return true;
-     } else {
+     }  else {
          return false;
      }
     }
